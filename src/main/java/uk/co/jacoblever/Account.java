@@ -23,7 +23,12 @@ public class Account {
         return balance;
     }
 
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
+    public boolean tryChangeBalance(BigDecimal amount) {
+        BigDecimal newBalance = balance.add(amount);
+        if(newBalance.compareTo(BigDecimal.ZERO) < 0){
+            return false;
+        }
+        balance = newBalance;
+        return true;
     }
 }

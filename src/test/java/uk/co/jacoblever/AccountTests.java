@@ -33,9 +33,26 @@ public class AccountTests {
     }
 
     @Test
-    public void Can_change_balance() {
-        Account account = new Account(1, "2.5");
-        account.setBalance(new BigDecimal("1.99"));
-        assertEquals(new BigDecimal("1.99"), account.getBalance());
+    public void Can_increase_balance() {
+        Account account = new Account(1, "9.89");
+        boolean result = account.tryChangeBalance(BigDecimal.ONE);
+        assertEquals(new BigDecimal("10.89"), account.getBalance());
+        assertEquals(true, result);
+    }
+
+    @Test
+    public void Can_decrease_balance_when_funds_available() {
+        Account account = new Account(1, "9.89");
+        boolean result = account.tryChangeBalance(BigDecimal.ONE.negate());
+        assertEquals(new BigDecimal("8.89"), account.getBalance());
+        assertEquals(true, result);
+    }
+
+    @Test
+    public void Can_NOT_decrease_balance_when_not_enough_funds_available() {
+        Account account = new Account(1, "0.99");
+        boolean result = account.tryChangeBalance(BigDecimal.ONE.negate());
+        assertEquals(new BigDecimal("0.99"), account.getBalance());
+        assertEquals(false, result);
     }
 }
