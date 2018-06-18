@@ -1,5 +1,6 @@
 package uk.co.jacoblever;
 
+import uk.co.jacoblever.api.TransferRequest;
 import uk.co.jacoblever.api.TransferResponse;
 
 import javax.ws.rs.POST;
@@ -21,7 +22,10 @@ public class TransferResource {
      */
     @POST
     @Produces(MediaType.APPLICATION_JSON)
-    public TransferResponse getIt() {
-        return new TransferResponse("Got it!");
+    public TransferResponse getIt(TransferRequest transfer) {
+        if(transfer == null){
+            return new TransferResponse("Got it!");
+        }
+        return new TransferResponse("Got it! " + transfer.getAmount());
     }
 }

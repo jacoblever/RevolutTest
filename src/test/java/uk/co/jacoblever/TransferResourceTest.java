@@ -42,10 +42,10 @@ public class TransferResourceTest {
      * Test to see that the message "Got it!" is sent in the response.
      */
     @Test
-    public void testGetIt() {
+    public void testCanPost() {
         String responseMsg = target.path("transfer")
                 .request()
-                .post(Entity.json(""), String.class);
-        assertEquals("{\"message\":\"Got it!\"}", responseMsg);
+                .post(Entity.json("{\"from-account-number\":12345678,\"to-account-number\":87654321,\"amount\":\"101\"}"), String.class);
+        assertEquals("{\"message\":\"Got it! 101\"}", responseMsg);
     }
 }
