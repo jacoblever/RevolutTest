@@ -2,6 +2,7 @@ package uk.co.jacoblever;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
+import javax.ws.rs.client.Entity;
 import javax.ws.rs.client.WebTarget;
 
 import org.glassfish.grizzly.http.server.HttpServer;
@@ -11,7 +12,7 @@ import org.junit.Before;
 import org.junit.Test;
 import static org.junit.Assert.assertEquals;
 
-public class MyResourceTest {
+public class TransferResourceTest {
 
     private HttpServer server;
     private WebTarget target;
@@ -42,7 +43,9 @@ public class MyResourceTest {
      */
     @Test
     public void testGetIt() {
-        String responseMsg = target.path("myresource").request().get(String.class);
-        assertEquals("Got it!", responseMsg);
+        String responseMsg = target.path("transfer")
+                .request()
+                .post(Entity.json(""), String.class);
+        assertEquals("{\"message\":\"Got it!\"}", responseMsg);
     }
 }

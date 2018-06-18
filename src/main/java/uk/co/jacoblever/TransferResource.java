@@ -1,6 +1,8 @@
 package uk.co.jacoblever;
 
-import javax.ws.rs.GET;
+import uk.co.jacoblever.api.TransferResponse;
+
+import javax.ws.rs.POST;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
@@ -8,8 +10,8 @@ import javax.ws.rs.core.MediaType;
 /**
  * Root resource (exposed at "myresource" path)
  */
-@Path("myresource")
-public class MyResource {
+@Path("transfer")
+public class TransferResource {
 
     /**
      * Method handling HTTP GET requests. The returned object will be sent
@@ -17,9 +19,9 @@ public class MyResource {
      *
      * @return String that will be returned as a text/plain response.
      */
-    @GET
-    @Produces(MediaType.TEXT_PLAIN)
-    public String getIt() {
-        return "Got it!";
+    @POST
+    @Produces(MediaType.APPLICATION_JSON)
+    public TransferResponse getIt() {
+        return new TransferResponse("Got it!");
     }
 }
