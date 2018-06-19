@@ -1,4 +1,4 @@
-package uk.co.jacoblever.api;
+package uk.co.jacoblever.api.models;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 

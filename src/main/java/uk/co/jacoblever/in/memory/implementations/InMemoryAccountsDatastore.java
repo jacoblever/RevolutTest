@@ -1,6 +1,6 @@
-package uk.co.jacoblever.datastore;
+package uk.co.jacoblever.in.memory.implementations;
 
-import uk.co.jacoblever.Account;
+import uk.co.jacoblever.domain.Account;
 import uk.co.jacoblever.Accounts;
 
 import java.util.HashMap;

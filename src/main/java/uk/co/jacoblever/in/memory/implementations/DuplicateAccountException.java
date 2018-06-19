@@ -1,4 +1,4 @@
-package uk.co.jacoblever.datastore;
+package uk.co.jacoblever.in.memory.implementations;
 
 class DuplicateAccountException extends RuntimeException {
     DuplicateAccountException(int accountNumber) {

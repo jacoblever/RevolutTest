@@ -1,6 +1,7 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.domain;
 
 import org.junit.Test;
+import uk.co.jacoblever.domain.Account;
 
 import java.math.BigDecimal;
 

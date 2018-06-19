@@ -1,4 +1,7 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.in.memory.implementations;
+
+import uk.co.jacoblever.domain.Account;
+import uk.co.jacoblever.MoneyTransferer;
 
 import java.math.BigDecimal;
 

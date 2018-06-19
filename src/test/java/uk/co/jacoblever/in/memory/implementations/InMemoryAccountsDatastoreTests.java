@@ -1,7 +1,7 @@
-package uk.co.jacoblever.datastore;
+package uk.co.jacoblever.in.memory.implementations;
 
 import org.junit.Test;
-import uk.co.jacoblever.Account;
+import uk.co.jacoblever.domain.Account;
 
 import static org.junit.Assert.assertNull;
 import static org.junit.Assert.assertSame;

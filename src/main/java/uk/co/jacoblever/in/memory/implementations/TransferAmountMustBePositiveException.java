@@ -1,4 +1,4 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.in.memory.implementations;
 
 import java.math.BigDecimal;
 

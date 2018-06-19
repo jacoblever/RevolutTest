@@ -1,4 +1,4 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.domain;
 
 import java.math.BigDecimal;
 

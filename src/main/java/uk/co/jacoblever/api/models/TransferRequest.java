@@ -1,6 +1,5 @@
-package uk.co.jacoblever.api;
+package uk.co.jacoblever.api.models;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class TransferRequest {

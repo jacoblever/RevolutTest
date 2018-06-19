@@ -1,5 +1,7 @@
 package uk.co.jacoblever;
 
+import uk.co.jacoblever.domain.Account;
+
 /**
  * The contract for out datastore
  */

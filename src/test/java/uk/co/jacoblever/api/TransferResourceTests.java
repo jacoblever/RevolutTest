@@ -1,4 +1,4 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.api;
 
 import javax.ws.rs.client.Client;
 import javax.ws.rs.client.ClientBuilder;
@@ -11,6 +11,10 @@ import org.glassfish.grizzly.http.server.HttpServer;
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
+import uk.co.jacoblever.domain.Account;
+import uk.co.jacoblever.Accounts;
+import uk.co.jacoblever.Main;
+import uk.co.jacoblever.MoneyTransferer;
 
 import java.math.BigDecimal;
 

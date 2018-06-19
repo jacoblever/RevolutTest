@@ -1,7 +1,10 @@
-package uk.co.jacoblever;
+package uk.co.jacoblever.api;
 
-import uk.co.jacoblever.api.TransferRequest;
-import uk.co.jacoblever.api.TransferResponse;
+import uk.co.jacoblever.domain.Account;
+import uk.co.jacoblever.Accounts;
+import uk.co.jacoblever.MoneyTransferer;
+import uk.co.jacoblever.api.models.TransferRequest;
+import uk.co.jacoblever.api.models.TransferResponse;
 
 import javax.ws.rs.POST;
 import javax.ws.rs.Path;
