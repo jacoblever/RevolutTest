@@ -42,6 +42,10 @@ public class TransferResource {
             return respond(400, "Amount must be positive");
         }
 
+        if (transfer.getFromAccountNumber() == transfer.getToAccountNumber()) {
+            return respond(400, "Cannot transfer to and from the same account");
+        }
+
         Account fromAccount = accounts.getAccount(transfer.getFromAccountNumber());
         if (fromAccount == null) {
             return respond(404, String.format("Account number %d not recognised", transfer.getFromAccountNumber()));

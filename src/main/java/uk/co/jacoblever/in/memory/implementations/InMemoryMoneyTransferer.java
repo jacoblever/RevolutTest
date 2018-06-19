@@ -17,6 +17,10 @@ public class InMemoryMoneyTransferer implements MoneyTransferer {
             throw new TransferAmountMustBePositiveException(amount);
         }
 
+        if(from.getAccountNumber() == to.getAccountNumber()) {
+            throw new TransferAccountsMustBeDifferentException(from.getAccountNumber());
+        }
+
         boolean withdrawSuccessful = from.tryChangeBalance(amount.negate());
         if(!withdrawSuccessful)
         {

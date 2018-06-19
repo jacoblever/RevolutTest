@@ -79,6 +79,15 @@ public class TransferResourceUnitTests {
     }
 
     @Test
+    public void testIfAccountNumbersAreTheSameReturn400() {
+        Response response = target.path("transfer")
+                .request()
+                .post(Entity.json("{\"from-account-number\":12345678,\"to-account-number\":12345678,\"amount\":\"1\"}"));
+        assertEquals(400, response.getStatus());
+        assertEquals("{\"message\":\"Cannot transfer to and from the same account\"}", response.readEntity(String.class));
+    }
+
+    @Test
     public void testIfFromAccountDoesNotExistReturn404() {
         Response response = target.path("transfer")
                 .request()

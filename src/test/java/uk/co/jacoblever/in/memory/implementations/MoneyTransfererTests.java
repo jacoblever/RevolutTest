@@ -49,4 +49,9 @@ public class MoneyTransfererTests {
         BigDecimal amount = BigDecimal.ZERO;
         transferer.transferMoney(from, to, amount);
     }
+
+    @Test(expected = TransferAccountsMustBeDifferentException.class)
+    public void TransferNotAllowedBetweenSameAccounts() {
+        transferer.transferMoney(from, from, BigDecimal.ONE);
+    }
 }
