@@ -19,7 +19,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class TransferResourceTest {
+public class TransferResourceTests {
 
     private HttpServer server;
     private WebTarget target;
