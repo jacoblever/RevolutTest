@@ -15,6 +15,10 @@ public class Account {
         this(accountNumber, new BigDecimal(openingBalance));
     }
 
+    public Account(int accountNumber) {
+        this(accountNumber, BigDecimal.ZERO);
+    }
+
     public int getAccountNumber() {
         return accountNumber;
     }

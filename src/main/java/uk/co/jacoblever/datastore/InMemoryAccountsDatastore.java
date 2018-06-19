@@ -12,7 +12,7 @@ public class InMemoryAccountsDatastore implements Accounts {
 
     private final HashMap<Integer, Account> accounts = new HashMap<>();
 
-    InMemoryAccountsDatastore(Account[] accounts) {
+    public InMemoryAccountsDatastore(Account[] accounts) {
         for (Account account : accounts) {
             if(this.accounts.containsKey(account.getAccountNumber())){
                 throw new DuplicateAccountException(account.getAccountNumber());
