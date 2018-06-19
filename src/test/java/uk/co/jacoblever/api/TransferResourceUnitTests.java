@@ -23,7 +23,7 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
-public class TransferResourceTests {
+public class TransferResourceUnitTests {
 
     private HttpServer server;
     private WebTarget target;
@@ -32,17 +32,8 @@ public class TransferResourceTests {
 
     @Before
     public void setUp() throws Exception {
-        // start the server
         server = Main.startServer(mockAccounts, mockMoneyTransferer);
-        // create the client
         Client c = ClientBuilder.newClient();
-
-        // uncomment the following line if you want to enable
-        // support for JSON in the client (you also have to uncomment
-        // dependency on jersey-media-json module in pom.xml and Main.startServer())
-        // --
-        // c.configuration().enable(new org.glassfish.jersey.media.json.JsonJaxbFeature());
-
         target = c.target(Main.BASE_URI);
     }
 
@@ -51,9 +42,6 @@ public class TransferResourceTests {
         server.stop();
     }
 
-    /**
-     * Test to see that the message "Got it!" is sent in the response.
-     */
     @Test
     public void postWithEmptyBodyGives400() {
         Response response = target.path("transfer")
