@@ -37,7 +37,7 @@ public class Main {
 
     public static void main(String[] args) throws IOException {
         final HttpServer server = startServer(
-                new InMemoryAccountsDatastore(new Account[]{}),
+                new InMemoryAccountsDatastore(getSampleAccounts()),
                 new InMemoryMoneyTransferer()
         );
         System.out.println(String.format("Jersey app started with WADL available at "
@@ -45,5 +45,16 @@ public class Main {
         System.in.read();
         server.stop();
     }
-}
 
+    /**
+     * These are some sample accounts for testing the system from the command line
+     * @return Sample accounts
+     */
+    private static Account[] getSampleAccounts() {
+        return new Account[]{
+                new Account(1, "30"),
+                new Account(2, "10"),
+                new Account(3, "100")
+        };
+    }
+}
