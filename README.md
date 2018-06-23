@@ -13,7 +13,7 @@ mvn exec:java
 ```
 from the root directory of the repository.
 
-You can then call the API by making POST requests to `http://localhost:8080/revolut-test/tranfer/` with the following JSON body:
+You can then call the API by making POST<sup>†</sup> requests to `http://localhost:8080/revolut-test/tranfer/` with the following JSON body:
 ```
 {
   "from-account-number": 1,
@@ -26,6 +26,8 @@ For example, you can use curl to make a request as follows:
 ```
 curl -X POST -H "Content-Type: application/json" -d '{"from-account-number":1,"to-account-number":2,"amount":"1.99"}' http://localhost:8080/revolut-test/transfer
 ```
+
+† I did have a debate with myself over whether this should use the POST or PATCH verb. PATCH felt a little wrong as we are not _changing_ a single entity, so I went for POST based on the idea that we are esentially creating a new _request to transfer_ money within the system (which may or may not be possible). Also, if this were to be developed into a full banking system, the request would probably result in a new transation being created to record the transfer.
 # Limitations
 * `transfer` is the only API endpoint at the moment. Obviously a real system would need the ability to create and manage the accounts as well. For testing perposses there are 3 sample accounts created on start up:
 
